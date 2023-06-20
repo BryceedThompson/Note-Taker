@@ -1,4 +1,4 @@
-const { param } = require('express/lib/router');
+// const { param } = require('express/lib/router');
 const fs = require('fs');
 const util = require('util');
 
@@ -6,14 +6,10 @@ const readFromFile = util.promisify(fs.readFile);
 const promiseWriteFS = util.promisify(fs.writeFile);
 
 
-// @param {string};
-// @param {object};
-// @returns {void};
-
 
 const writeFile = (location, content) =>{
 promiseWriteFS(location, JSON.stringify(content,null,4),(err) =>{
-err ? console.error(err) : console.info('/nData written to ${location}')
+err ? console.error(err) : console.info('\nData written to ${location}')
 });
 };
 
