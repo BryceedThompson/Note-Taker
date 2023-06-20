@@ -34,7 +34,7 @@ app.get('*', (req, res) => {
     fs.readFile(path.join(__dirname,  "./db/db.json"), 'utf8', (err, data) => {
       let db = JSON.parse(data);
       db.push({
-        note_id: uuid.v4(),
+        id: uuid.v4(),
         ...req.body,
       });
       fs.writeFile(
